@@ -1,0 +1,25 @@
+name: GitHub Pages deploy
+
+on:
+  push:
+    branches:
+      - main  # O la rama que estás usando
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Convert symlinks to real files
+        run: |
+          # Esto convierte los enlaces simbólicos a archivos reales
+          find . -type l -exec cp -s {} \;
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: ./
