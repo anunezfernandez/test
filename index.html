@@ -210,6 +210,43 @@ header .intro {
     text-align: center;
 }
 
+        /* Estilo general del navbar */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    position: relative; /* Necesario para el efecto de deslizamiento */
+    padding: 5px 0;
+    transition: color 0.3s ease; /* Suaviza el cambio de color */
+}
+
+/* Efecto de hover en los enlaces */
+nav a:hover {
+    color: #FF6347; /* Cambia el color del texto */
+}
+
+nav a::before {
+    content: ''; /* Crea un pseudo-elemento */
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #FF6347; /* Color de la barra de fondo */
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0); /* Inicialmente la barra está oculta */
+    transform-origin: bottom right; /* La barra se expandirá desde la esquina inferior derecha */
+    transition: transform 0.3s ease-in-out; /* Suaviza la animación de expansión */
+}
+
+/* Cuando pasas el cursor, la barra se expande */
+nav a:hover::before {
+    transform: scaleX(1); /* Expande la barra completamente */
+    transform-origin: bottom left; /* La barra se expande desde la esquina inferior izquierda */
+}
+
+
     </style>
 </head>
 <body>
