@@ -246,6 +246,25 @@ nav a:hover::before {
     transform: scaleX(1); /* Expande la barra completamente */
     transform-origin: bottom left; /* La barra se expande desde la esquina inferior izquierda */
 }
+.photo-gallery div {
+    width: 32%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Añade una transición suave para el cambio de tamaño */
+}
+
+.photo-gallery div:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen en un 10% */
+}
+
+.photo-gallery div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transición suave para la imagen */
+}
 
 
     </style>
