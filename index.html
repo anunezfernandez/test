@@ -14,6 +14,28 @@
             background-color: #f4f4f9;
         }
 
+        /* Header / Menú de navegación */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #333;
+            padding: 10px 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
         /* Header / Portada */
         header {
             position: relative;
@@ -43,8 +65,17 @@
             font-weight: 600;
             z-index: 1;
             color: #fff;
+            margin: 0;
         }
 
+        .intro {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-top: 20px;
+            font-weight: 300;
+        }
+
+        /* Secciones */
         section {
             margin: 40px;
             padding: 30px;
@@ -56,11 +87,13 @@
         h2 {
             font-family: 'Poppins', sans-serif;
             color: #333;
+            text-align: center;
         }
 
         .content p {
             font-size: 1.2rem;
             color: #555;
+            text-align: center;
         }
 
         .photo-gallery {
@@ -125,17 +158,33 @@
             header h1 {
                 font-size: 2.5rem;
             }
+
+            .intro {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
 
+<!-- Menú de navegación -->
+<nav>
+    <a href="#premios">Premios del Sorteo</a>
+    <a href="#participar">¿Cómo Participar?</a>
+    <a href="#galeria">Galería de Roma</a>
+</nav>
+
+<!-- Header / Portada -->
 <header>
     <div class="overlay"></div>
-    <h1>¡Sorteo-estafa del Viaje a Roma!</h1>
+    <div>
+        <h1>¡Sorteo-estafa del Viaje a Roma!</h1>
+        <p class="intro">Participa en este sorteo amañado y tal vez, solo tal vez, ¡puedas imaginar que te llevas un premio! Pero mientras tanto, María se vuelve millonaria.</p>
+    </div>
 </header>
 
-<section>
+<!-- Sección Premios -->
+<section id="premios">
     <h2>Premios del Sorteo</h2>
     <p class="content">¡No te pierdas la oportunidad de imaginar que ganas uno de estos premios increíbles!</p>
     <div class="photo-gallery">
@@ -151,7 +200,8 @@
     </div>
 </section>
 
-<section>
+<!-- Sección Participar -->
+<section id="participar">
     <h2>¿Cómo Participar?</h2>
     <p class="content">Es muy sencillo, solo tienes que comprar tus papeletas a <strong>María León Pizzano</strong> para que María se pueda reir de ti cuando esté en Roma.</p>
     <p class="content">¡Cada papeleta te evita la oportunidad de ganar!</p>
@@ -161,7 +211,8 @@
     </p>
 </section>
 
-<section>
+<!-- Sección Galería Roma -->
+<section id="galeria">
     <h2>Galería de Roma</h2>
     <div class="content">
         <p>Disfruta de algunas vistas de Roma, el destino al que no vas a ir, ¡una ciudad increíblemente hermosa!</p>
@@ -179,6 +230,7 @@
     </div>
 </section>
 
+<!-- Footer -->
 <footer>
     <p>&copy; 2025 Sorteo Viaje a Roma | Estafa piramidal | Todos los derechos reservados.</p>
 </footer>
