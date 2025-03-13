@@ -5,100 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Compra tu papeleta para ganar un viaje a Roma durante el Jubileo, con increíbles premios como un portátil, tablet y tablet digitalizadora.">
     <title>Jubileo 2025 | Estafa piramidal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
         }
+
+        /* Header / Portada */
+        header {
+            position: relative;
+            background-image: url('https://th.bing.com/th/id/R.a0e42decffcfff44fc4f2215f2d10931?rik=paRij6vA62PX%2fw&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f3%2f6%2f2%2f1053930-vatican-wallpaper-1920x1080-for-mac.jpg&ehk=1V7%2fZJZN1dkiBGXOnI8YBJ2N8F4HeOGZKmf5zSEoJE8%3d&risl=&pid=ImgRaw&r=0');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+            z-index: 1;
+            color: #fff;
+        }
+
         section {
-            margin: 20px;
-            padding: 20px;
+            margin: 40px;
+            padding: 30px;
             border-radius: 8px;
             background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
-            text-align: center;
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
             color: #333;
         }
+
+        .content p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
         .photo-gallery {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            gap: 20px;
             flex-wrap: wrap;
-            margin: 20px 0;
+            margin-top: 20px;
         }
+
         .photo-gallery div {
-            margin: 10px;
-            border: 2px solid #ddd;
+            width: 32%;
+            height: 200px;
+            overflow: hidden;
             border-radius: 8px;
-            width: 200px;
-            height: 150px;
-            background-color: #f0f0f0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .photo-gallery div img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 8px;
         }
-        .content {
-            text-align: center;
-        }
+
         .button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #FF6347;
             color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-align: center;
-            display: inline-block;
-            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
+
         .button:hover {
             background-color: #FF4500;
         }
+
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             background-color: #333;
             color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .photo-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .photo-gallery div {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<section>
+<header>
+    <div class="overlay"></div>
     <h1>¡Sorteo del Viaje a Roma!</h1>
-    <p class="content">Compra tus papeletas para participar en un increíble sorteo amañado y absolutamente nada mientras Maria se va al Jubileo.</p>
-    <p class="content">Los premios son un <strong>portátil</strong>, una <strong>tablet</strong> y una <strong>tablet digitalizadora</strong>.</p>
-</section>
+</header>
 
 <section>
     <h2>Premios del Sorteo</h2>
-    <div class="content">
-        <p>¡No te pierdas la oportunidad de ganar uno de estos premios increíbles!</p>
-        <div class="photo-gallery">
-            <div>
-                <img src="https://www.bing.com/images/search?view=detailV2&ccid=RHkT94BI&id=12C174873C3749773727D24A0D648601B5CE9FB9&thid=OIP.RHkT94BIMpZwW9DOlIOh3wHaHa&mediaurl=https%3a%2f%2fwww.vtech.es%2fassets%2fdab47a3a-afe7-4791-a76e-a3c02cb256d8%2fSpidey-y-su-superequipo-Portatil-educativo-561622-PT01.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.447913f780483296705bd0ce9483a1df%3frik%3duZ%252fOtQGGZA1K0g%26pid%3dImgRaw%26r%3d0&exph=1000&expw=1000&q=portatil+juguete&simid=608038070137657180&FORM=IRPRST&ck=70F63678363DEA9B1FC30AD55ECF87E7&selectedIndex=9&itb=0" alt="Portátil">
-            </div>
-            <div>
-                <img src="https://i5.walmartimages.com/asr/fec86c14-6b71-4131-a3d2-f09837b16830_1.16866893112c69dae13b27c2b367f3d0.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff" alt="Tablet">
-            </div>
-            <div>
-                <img src="https://i5.walmartimages.com.mx/mg/gm/1p/images/product-images/img_large/00341776542822l.jpg" alt="Tablet Digitalizadora">
-            </div>
+    <p class="content">¡No te pierdas la oportunidad de ganar uno de estos premios increíbles!</p>
+    <div class="photo-gallery">
+        <div>
+            <img src="https://th.bing.com/th/id/OIP.RHkT94BIMpZwW9DOlIOh3wHaHa?rs=1&pid=ImgDetMain" alt="Portátil">
+        </div>
+        <div>
+            <img src="https://i5.walmartimages.com/asr/fec86c14-6b71-4131-a3d2-f09837b16830_1.16866893112c69dae13b27c2b367f3d0.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff" alt="Tablet">
+        </div>
+        <div>
+            <img src="https://i5.walmartimages.com.mx/mg/gm/1p/images/product-images/img_large/00341776542822l.jpg" alt="Tablet Digitalizadora">
         </div>
     </div>
 </section>
 
 <section>
     <h2>¿Cómo Participar?</h2>
-    <p class="content">Es muy sencillo, solo tienes que comprar tus papeletas a <strong>María León Pizzano</strong> para que María se pueda reir de ti cuando este en Roma.</p>
+    <p class="content">Es muy sencillo, solo tienes que comprar tus papeletas a <strong>María León Pizzano</strong> para que María se pueda reir de ti cuando esté en Roma.</p>
     <p class="content">¡Cada papeleta te evita la oportunidad de ganar!</p>
     <p class="content">Contáctanos ahora para adquirir tus papeletas.</p>
     <p class="content">
