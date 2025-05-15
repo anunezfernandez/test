@@ -287,6 +287,15 @@ nav a:hover::before {
     </div>
 </header>
 
+<!-- Sección ruleta -->
+<section id="ruleta" style="text-align: center; padding: 50px;">
+  <h2>Gira la Ruleta</h2>
+  <canvas id="wheel" width="400" height="400"></canvas>
+  <br>
+  <button onclick="spinWheel()">Girar</button>
+  <h3 id="winner"></h3>
+</section>
+
 <!-- Sección Premios -->
 <section id="premios">
     <h2>Premios del Sorteo</h2>
@@ -341,3 +350,76 @@ nav a:hover::before {
 
 </body>
 </html>
+
+<script>
+  const names = ["Ana", "Luis", "Carlos", "Lucía", "María", "Jorge"];
+  const fixedWinner = "Lucía"; // Trucado: siempre gana Lucía
+  const canvas = document.getElementById("wheel");
+  const ctx = canvas.getContext("2d");
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+  const radius = 180;
+  const segmentAngle = (2 * Math.PI) / names.length;
+
+  function drawWheel() {
+    for (let i = 0; i < names.length; i++) {
+      ctx.beginPath();
+      ctx.fillStyle = i % 2 === 0 ? "#FFCC00" : "#FF9900";
+      ctx.moveTo(centerX, centerY);
+      ctx.arc(centerX, centerY, radius, i * segmentAngle, (i + 1) * segmentAngle);
+      ctx.fill();
+      ctx.save();
+      ctx.translate(centerX, centerY);
+      ctx.rotate(i * segmentAngle + segmentAngle / 2);
+      ctx.textAlign = "right";
+      ctx.fillStyle = "#000";
+      ctx.font = "16px Arial";
+      ctx.fillText(names[i], radius - 10, 5);
+      ctx.restore();
+    }
+
+    // Flecha indicadora
+    ctx.fillStyle = "#000";
+    ctx.beginPath();
+    ctx.moveTo(centerX, centerY - radius - 10);
+    ctx.lineTo(centerX - 10, centerY - radius - 30);
+    ctx.lineTo(centerX + 10, centerY - radius - 30);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  function spinWheel() {
+    const index = names.indexOf(fixedWinner);
+    const anglePerSegment = 360 / names.length;
+    const offset = anglePerSegment / 2;
+    const stopAngle = (360 - (index * anglePerSegment + offset)) + (360 * 5); // 5 vueltas
+    let currentAngle = 0;
+    const duration = 4000;
+    const startTime = performance.now();
+
+    function animate(time) {
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3); // easing
+      currentAngle = easeOut * stopAngle;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.save();
+      ctx.translate(centerX, centerY);
+      ctx.rotate((currentAngle * Math.PI) / 180);
+      ctx.translate(-centerX, -centerY);
+      drawWheel();
+      ctx.restore();
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        document.getElementById("winner").textContent = `Ganador: ${fixedWinner}`;
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  drawWheel();
+</script>
